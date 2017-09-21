@@ -1,0 +1,147 @@
+@import '../../shared/styles/default.scss';
+
+
+
+.responsive__header {
+    width: 100%;
+    color: #fff;
+    background-color: transparent;
+    padding: .5rem 1.25rem;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 600;
+}
+
+.header__divider {
+    border-right: 1px solid $white;
+    height: 3rem;
+}
+
+.header__logo {
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    display: inline-block;
+}
+
+.hamburger__container {
+    padding:  1.813rem 0.25rem 0.25rem;
+    width: 46px;
+    @include borderBox;
+    position: relative;
+    background: transparent;
+    border: 0px solid $gray-5;
+    color: $white;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    outline: none;
+}
+
+// navicon
+.hamburger__navicon,
+.hamburger__navicon:before,
+.hamburger__navicon:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 3px;
+    background-color: $white;
+    @include border-radius(2px);
+    @include transition(all, 0.2s, ease-in-out);
+}
+
+.hamburger__navicon {
+    top: 13px;
+    left: 9px;
+}
+
+.hamburger__navicon:before {
+    top: -7px;
+    left: 0;
+}
+
+.hamburger__navicon:after {
+    top: 7px;
+    left: 0;
+}
+
+// Active navicon states
+.hamburger__navicon--isActive {
+    background-color: transparent;
+}
+
+.hamburger__navicon--isActive:before {
+    top: 0;
+    margin-top: 1px;
+    @include transform(rotate(45deg));
+    -webkit-transform-origin: left left;
+    transform-origin: left left;
+}
+
+.hamburger__navicon--isActive:after {
+    top: 0;
+    margin-top: 1px;
+     @include transform(rotate(-45deg));
+    -webkit-transform-origin: left left;
+    transform-origin: left left;
+}
+
+.mobileUtil {
+    display: none;
+}
+
+@media (min-width: $breakpoint-large) {
+    .mobileUtil {
+        display: none;
+    }
+}
+
+
+.navMenu--vert > * + * {
+    border-top: 1px solid $white;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+.nav__link {
+    color: $white;
+    font-size: 0.9rem;
+}
+
+a:visited.nav__link {
+    color: $white;
+}
+
+.navMenu--vert > li:last-child{
+   padding-bottom: 1rem;
+}
+
+.navMenu--horz > * + *  {
+    border-left: 1px solid $white;
+    padding-left: .6rem;
+    margin-left: .4rem;
+}
+
+.nav--hide {
+    display: none;
+}
+
+.nav--show {
+    display: block;
+}
+
+@media (max-width: $breakpoint-medium) {
+    .nav > * + * {
+        border-top: 1px solid $white;
+    }
+
+    .navMenu--vert {
+      font-size: 1rem;
+    }
+
+}

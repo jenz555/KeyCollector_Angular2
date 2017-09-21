@@ -1,0 +1,68 @@
+@import '../../shared/styles/default.scss';
+body{
+    background: #222;
+  
+  }
+.hero-skewed {
+    background: darkblue;
+    padding: 200px 0;
+    @include transform(skew(0deg, -10deg));
+    margin-top: -200px;  
+}  
+
+.header__logo {
+    @include border-radius(50%);
+    height: 150px;
+    width: 148px;
+   // @include dropShadow(inset 2px 2px 4px rgba(0, 0, 0, 0.80));
+}
+.hero {
+    width: 100%;
+    background-image: url('/assets/appBackground_2.png');
+    height: 500px;
+    position: absolute;
+    z-index: 100;
+    padding: 200px 0;
+   // @include transform(skew(0deg, -10deg));
+    margin-top: -100px;  
+
+
+        .content{
+       // @include transform(skew(0deg, 10deg));
+        text-align: center;
+        
+        .title{
+          padding-top: 50px;
+          font-weight: normal;
+        }
+      } 
+
+    
+}  
+
+.hero--phone {
+    width: 100%;
+    background-color: darkblue;
+    height: 500px;
+    position: absolute;
+    z-index: 99;
+    padding: 200px 0;
+    @include transform(skew(0deg, 45deg));
+    margin-top: -100px;  
+    opacity: 0.5;
+
+        .content{
+        @include transform(skew(0deg, -10deg));
+        text-align: center;
+        
+        .title{
+          padding-top: 50px;
+          font-weight: normal;
+        }
+
+        
+      } 
+
+    
+}  
+

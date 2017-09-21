@@ -1,0 +1,141 @@
+
+.btn,
+.btn:visited {
+    border: 1px solid transparent;
+    background-color: $gray-3;
+    color: $black;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-family: $font-base;
+    @include appearance(); //[2]
+    @include borderBox();
+    @include userSelect();
+    line-height: $base-lineHeight;
+    width: 100%;
+    margin: 0;
+    min-height: $base-inputHeight;
+    padding: 0.5625rem 2rem; //9px 32px
+    white-space:normal; //[3]
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background-color: $gray-6;
+    color: $color-text-inverse;
+    text-decoration: none;
+}
+
+.btn--isActive,
+.btn:active {
+    color: $color-text-inverse;
+}
+
+// Tertiary
+.btn--dismiss,
+.btn--dismiss:visited {
+    background-color: $gray-2;
+    color: $gray-6;
+}
+
+.btn--dismiss:hover,
+.btn--dismiss:active,
+.btn--dismiss:focus {
+    background-color: $gray-4;
+    color: $black;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.btn--white,
+.btn--white:visited {
+    background-color: $white;
+    text-shadow:none;
+    border:1px solid $gray-3;
+}
+
+.btn--white:hover,
+.btn--white:active,
+.btn--white:focus {
+    background-color:$gray-2;
+    text-decoration: none;
+    color: $black;
+}
+
+.btn--link,
+.btn--link:visited {
+  display: inline;
+  padding: 0;
+  width: auto;
+  min-height: initial;
+  font-family: inherit;
+  line-height: inherit;
+  box-shadow: none;
+}
+
+.btn--link:hover,
+.btn--link:active,
+.btn--link:focus {
+    background: none;
+    color: $black;
+    text-decoration: underline;
+}
+
+.btn--block {
+    width: 100%;
+}
+
+.btn > .icon {
+    display: inline-block;
+    height:  0.875rem;
+    margin-right: 0.5rem;
+    width:  0.875rem;
+    display: inline-block;
+}
+
+.btn[disabled],
+.btn[disabled]:hover,
+.btn[disabled]:active,
+.btn--isDisabled,
+.btn--isDisabled:hover,
+.btn--isDisabled:active
+{
+    background-color: $gray-3;
+    color: $gray-6;
+    -webkit-text-shadow: none;
+    text-shadow: none;
+    opacity: 0.5;
+    cursor: default;
+    box-shadow: none;
+}
+
+//----------------------------------------------------
+// Media Queries
+//----------------------------------------------------
+
+@media (min-width: $breakpoint-medium) {
+    .btn {
+        display: inline-block;
+        width: auto;
+    }
+
+    .btn--block {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (min-width: $breakpoint-large) {
+    .btn {
+        font-size: $base-fontSize;
+    }
+
+    .btn > .icon {
+        height: $base-fontSize;
+        width: $base-fontSize;
+    }
+}
